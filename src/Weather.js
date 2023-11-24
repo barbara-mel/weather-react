@@ -75,13 +75,9 @@ export default function Weather() {
                     {weatherData.temperature}
                   </span>
                   <small className="units">
-                    <a href="#" id="celcius" className="active">
-                      ºC
-                    </a>{" "}
-                    |
-                    <a href="#" id="fahrenheit">
-                      ºF
-                    </a>
+                    
+                    <div>ºC | ºF</div>
+                    
                   </small>
                 </p>
               </div>
