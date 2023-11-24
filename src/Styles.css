@@ -1,0 +1,136 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 200px 100px 600px;
+    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    display: block;
+  }
+  
+  h1,
+  h2,
+  span {
+    font-family: "Poppins", sans-serif;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  p {
+    text-align: left;
+    font-size: 46px;
+    margin-left: 0;
+  }
+  
+  /* Button style area */
+  button {
+    border: none;
+    background: transparent;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .col-3 {
+    width: 30%;
+  }
+  
+  .col-4 {
+    width: 25%;
+  }
+  
+  .row {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .units {
+    font-size: 14px;
+    position: relative;
+    top: -20px;
+  }
+  
+  .active {
+    color: rgb(33, 33, 33);
+    cursor: default;
+  }
+  
+  .active:hover {
+    text-decoration: none;
+  }
+  
+  #current-button {
+    background-color: bisque;
+  }
+  .btn {
+    color: #fff;
+    background: violet;
+  }
+  
+  .container {
+    max-width: 1300px;
+  }
+  
+  /* Search tab area */
+  .container-search-tab {
+    margin: 10px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+    color: #878787;
+    font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
+    padding: 40px;
+    width: 55%;
+  }
+  
+  .container-weather {
+    margin: 10px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+    color: #878787;
+    font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
+    padding: 40px 20px 40px 65px;
+    width: 55%;
+    display: block;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .row-day {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  
+  .icon-temperature {
+    font-size: 50px;
+  }
+  
+  .next-temperature-days {
+    padding: 15px 0 15px;
+  }
+  
+  .date {
+    font-size: 13px;
+  }
+  
+  /* */
+  .container-footer {
+    margin: 10px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+    color: #878787;
+    font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
+    padding: 10px;
+    width: 55%;
+  }
+  .open-source-info {
+    color: blue;
+  }
+  
