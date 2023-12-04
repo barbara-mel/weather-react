@@ -1,129 +1,157 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./Styles.css";
+import DateU from "./DateU";
 
-export default function Weather() {
-  let weatherData = {
-    date: "Tuesday 10:00",
-    description: "Cloudy",
-    imgUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
-    humidity: 80,
-    wind: 10
+export default function Weather(props) {
+
+  const [weatherData, setWeatherData] = useState({ready:false});
+  const [city, setCity] = useState(props.defaultCity);
+
+  // API Call 
+
+  function showSearchPosition(city) {
+    let key = "6e6ec494746b5229a9f2d526478c924c";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+  
+    axios.get(url).then(handleResponse);
   };
 
-  const [city, setCity] = useState("");
-  const [message, setMessage] = useState("");
+  // Handle Response
 
-  function alertCity(event) {
-    event.preventDefault();
-    setMessage(`It is currently 20ºC in ${city}`);
-  }
+  function handleResponse(response){
+    setWeatherData ({
+    ready: true,
+    coordinates: response.data.coord,
+    description: response.data.weather[0].main,
+    icon: response.data.weather[0].icon,
+    precipitation: Math.round(response.data.main.humidity) + "%",
+    temperature: Math.round(response.data.main.temp),
+    time: new Date(response.data.dt * 1000),
+    wind: Math.round(response.data.wind.speed) + "km/h",
+    humidity: response.data.main.himidity,
+    city: response.data.main,
+    })};
+  
+    function handleSubmit(event) {
+      event.preventDefault();
+      showSearchPosition();
+    }
+  
+    function handleCityChange(event) {
+      setCity(event.target.value);
+    }
 
-  function updateCity(event) {
-    setCity(event.target.value);
-  }
-
-  return (
-    <div className="App">
+    if (weatherData.ready) {
+      return (
       <div className="container">
-        <div className="container-search-tab">
-          <form id="search-form" className="mb-3" onSubmit={alertCity}>
-            <div className="row">
-              <div className="col-10">
-                <input
-                  type="search"
-                  onChange={updateCity}
-                  placeholder="Enter a city.."
-                  className="form-control search-input"
-                  id="search-tab-input"
-                />
-              </div>
-              <div className="col-2 pink-button">
-                <button>
-                  <input
-                    type="submit"
-                    className="btn w-100"
-                    value="Search"
-                    id="search-button"
-                  />
-                </button>
-              </div>
-            </div>
-          </form>
+      <div className="container-search-tab">
+        <div className="row">
+          <div className="col-10">
+            <form id="search-form" className="mb-3" onSubmit={handleSubmit}>
+              <input
+                type="search"
+                placeholder="Enter a city.."
+                className="form-control search-input"
+                id="search-tab-input"
+                autoFocus="on"
+                onChange={handleCityChange}
+              />
+            </form>
+          </div>
+          <div className="col-2 pink-button">
+            <button>
+              <input
+                type="submit"
+                class="btn w-100"
+                value="Search"
+                id="search-button"
+              />
+            </button>
+          </div>
         </div>
+      </div>
 
-        <div className="container-weather">
-          <div className="row">
-            <div className="col-5">
-              <div className="row-city">
-                <h1 id="city-1">{message}</h1>
-              </div>
-
-              <div className="row-temperature-image">
-                <img
-                  className="float-left main-temp-image"
-                  src={weatherData.imgUrl}
-                  alt={weatherData.description}
-                  width="100"
-                  id="icon"
-                />
-                <p>
-                  <span
-                    className="temperature fw-bolder mb-3"
-                    id="current-temperature"
-                  >
-                    {weatherData.temperature}
-                  </span>
-                  <small className="units">
-                    
-                    <div>ºC | ºF</div>
-                    
-                  </small>
-                </p>
-              </div>
-              <div>
-                <small id="date-display">Last Update: {weatherData.date}</small>
-              </div>
-              <div>
-                <small>
-                  Humidity:{" "}
-                  <span id="current-humidity">{weatherData.humidity}%</span>
-                </small>
-              </div>
-              <div>
-                <small id="current-description"></small>
-              </div>
-              <div>
-                <small id="wind-speed">Wind Speed: {weatherData.wind} </small>
-              </div>
+      <div className="container-weather">
+        <div className="row">
+          <div className="col-5">
+            <div className="row-city">
+              <h1 id="city-1">City</h1>
             </div>
 
-            <div className="col-7" id="forecast">
-              <div className="row">
-                <div className="row next-temperature-days">
-                  <div className="col-4"></div>
-                  <div className="col-8"></div>
+            <div className="row-temperature-image">
+              <img
+                className="float-left main-temp-image"
+                src=""
+                alt="Clear"
+                width="180"
+                id="icon"
+              />
+              <p>
+                <span
+                  className="temperature fw-bolder mb-3"
+                  id="current-temperature"
+                >
+                </span
+                ><small className="units"
+                  ><a href="#" id="celcius" className="active">ºC</a> |
+                  <a href="#" id="fahrenheit">ºF</a></small
+                >
+              </p>
+            </div>
+            <div>
+              <small id="date-display">Last Update: </small>
+            </div>
+            <div>
+              <small>Humidity: <span id="current-humidity">%</span></small>
+            </div>
+            <div>
+              <small id="current-description"></small>
+            </div>
+            <div>
+              <small id="wind-speed">Wind Speed: </small>
+            </div>
+          </div>
+
+          <div className="col-7" id="forecast">
+            <div className="row">
+              <div className="row next-temperature-days">
+                <div className="col-4">
+                  <img
+                    className="float-left main-temp-image"
+                    src="http://openweathermap.org/img/wn/50d@2x.png"
+                    alt="temperature-icon"
+                    width="50"
+                  />
+                </div>
+                <div className="col-8">
+                  <span className="weather-forecast-temperature-max">30°C</span> |
+                  <span className="weather-forecast-temperature-min">25°C</span>
+                  <div className="forecast-time">Monday, 07/31</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <footer>
-          <div className="container-footer fs-6 text fw-lighter fst-italic font-monospace">
-            <a
-              href="https://github.com/barbara-mel/week6-lesson4.git"
-              target="_blank"
-              id="open-source-link"
-              className="open-source-info"
-              rel="noreferrer"
-            >
-              Open-source coded
-            </a>{" "}
-            <span></span>
-            By Barbara Melgaço
-            <i className="fa-solid fa-temperature-three-quarters"></i>
-          </div>
-        </footer>
       </div>
-    </div>
-  );
-}
+      <footer>
+        <div
+          className="container-footer fs-6 text fw-lighter fst-italic font-monospace"
+        >
+          <a
+            href="https://github.com/barbara-mel/week6-lesson4.git"
+            target="_blank"
+            id="open-source-link"
+            className="open-source-info"
+            >Open-source coded</a
+          >
+          By Barbara Melgaço
+          <i className="fa-solid fa-temperature-three-quarters"></i>
+        </div>
+      </footer>
+    </div>); } 
+
+      else {
+        showSearchPosition();
+          return (<div>"Loading..."</div>);
+        }}
