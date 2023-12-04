@@ -1,3 +1,4 @@
+import React from "react";
 import Weather from "./Weather.js"
 import "./Styles.css";
 
@@ -7,7 +8,7 @@ function App() {
     <div className="App">
       <div className="container">
       <header className="App-header">
-      < Weather/>
+      < Weather defaultCity="Rio de Janeiro"/>
       </header>
     </div></div>
   );

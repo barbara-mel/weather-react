@@ -10,9 +10,9 @@ export default function Weather(props) {
 
   // API Call 
 
-  function showSearchPosition(city) {
+  function showSearchPosition() {
     let key = "6e6ec494746b5229a9f2d526478c924c";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+    let url = `https://api.openweathermap.org/data/3.0/weather?q=${city}&appid=${key}&units=metric`;
   
     axios.get(url).then(handleResponse);
   };
