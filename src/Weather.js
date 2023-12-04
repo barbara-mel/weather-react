@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Styles.css";
-import DateU from "./DateU.js";
+
 
 export default function Weather(props) {
 
@@ -97,7 +97,7 @@ export default function Weather(props) {
               </p>
             </div>
             <div>
-              <small>Last Update: <DateU /></small>
+              <small>Last Update: Achar o Problema desta bosta!</small>
             </div>
             <div>
               <small className="humidity">Humidity: <span>{weatherData.humidity}%</span></small>
@@ -141,9 +141,9 @@ export default function Weather(props) {
           <a
             href="https://github.com/barbara-mel/week6-lesson4.git"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="open-source-info"
-            >Open-source coded</a
+            >Open-source coded </a
           >
           By Barbara Melgaço
           <i className="fa-solid fa-temperature-three-quarters"></i>
