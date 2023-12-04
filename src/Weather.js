@@ -76,7 +76,7 @@ export default function Weather(props) {
         <div className="row">
           <div className="col-5">
             <div className="row-city">
-              <h1 id="city-1">City</h1>
+              <h1 id="city-1">{weatherData.city}</h1>
             </div>
 
             <div className="row-temperature-image">
@@ -94,22 +94,20 @@ export default function Weather(props) {
                 >
                 </span
                 ><small className="units"
-                  ><a href="#" id="celcius" className="active">ºC</a> |
-                  <a href="#" id="fahrenheit">ºF</a></small
-                >
+                  >{weatherData.temperature}ºC </small>
               </p>
             </div>
             <div>
-              <small id="date-display">Last Update: </small>
+              <small id="date-display">Last Update: <DateU /></small>
             </div>
             <div>
-              <small>Humidity: <span id="current-humidity">%</span></small>
+              <small>Humidity: <span id="current-humidity">{weatherData.humidity}%</span></small>
             </div>
             <div>
-              <small id="current-description"></small>
+              <small id="current-description">{weatherData.description}</small>
             </div>
             <div>
-              <small id="wind-speed">Wind Speed: </small>
+              <small id="wind-speed">Wind Speed: {weatherData.wind}</small>
             </div>
           </div>
 
@@ -142,6 +140,7 @@ export default function Weather(props) {
             href="https://github.com/barbara-mel/week6-lesson4.git"
             target="_blank"
             id="open-source-link"
+            rel="noreferrer"
             className="open-source-info"
             >Open-source coded</a
           >
@@ -149,9 +148,9 @@ export default function Weather(props) {
           <i className="fa-solid fa-temperature-three-quarters"></i>
         </div>
       </footer>
-    </div>); } 
-
-      else {
+    </div>
+    ); 
+      } else {
         showSearchPosition();
-          return (<div>"Loading..."</div>);
+          return "Loading...";
         }}
