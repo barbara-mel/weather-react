@@ -8,14 +8,7 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ready:false});
   const [city, setCity] = useState(props.defaultCity);
 
-  // API Call 
 
-  function showSearchPosition() {
-    let key = "c6f8ef4575250284954db9f4dfa7a996";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
-  
-    axios.get(url).then(handleResponse);
-  };
 
   // Handle Response
 
@@ -32,6 +25,15 @@ export default function Weather(props) {
     humidity: Math.round(response.data.main.humidity)+ "%",
     city: response.data.name,
     })};
+
+    // API Call 
+
+  function showSearchPosition() {
+    let key = "c6f8ef4575250284954db9f4dfa7a996";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+  
+    axios.get(url).then(handleResponse);
+  };
   
     function handleSubmit(event) {
       event.preventDefault();
@@ -46,29 +48,26 @@ export default function Weather(props) {
       return (
       <div className="container">
       <div className="container-search-tab">
+        <form className="mb-3" onSubmit={handleSubmit}>
         <div className="row">
           <div className="col-10">
-            <form className="mb-3" onSubmit={handleSubmit}>
-              <input
+            <input
                 type="search"
                 placeholder="Enter a city.."
                 className="form-control search-input"
                 autoFocus="on"
                 onChange={handleCityChange}
               />
-            </form>
           </div>
           <div className="col-2 pink-button">
-            <button>
               <input
                 type="submit"
-                class="btn w-100"
+                className="btn w-100"
                 value="Search"
-                
               />
-            </button>
-          </div>
+              </div>
         </div>
+        </form>
       </div>
 
       <div className="container-weather">

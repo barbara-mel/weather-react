@@ -28,11 +28,12 @@ body {
   }
   
   /* Button style area */
-  button {
-    border: none;
-    background: transparent;
-  }
   
+  .pink-button{
+    color-scheme: pink;
+  }
+
+
   a {
     text-decoration: none;
   }
