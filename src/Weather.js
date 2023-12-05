@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import "./Styles.css";
-import "bootstrap/dist/css/bootstrap.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -80,8 +80,10 @@ export default function Weather(props) {
                   width="180"
                 />
                 <p>
-                  <span className="temperature fw-bolder mb-3"></span>
-                  <small className="units">{weatherData.temperature}ºC </small>
+                  <span className="temperature fw-bolder mb-3">
+                    {weatherData.temperature}
+                  </span>
+                  <small className="units">ºC </small>
                 </p>
               </div>
               <div>

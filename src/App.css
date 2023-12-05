@@ -2,14 +2,6 @@
   text-align: center;
 }
 
-body {
-  font-family: sans-serif;
-  text-align: center;
-  padding: 200px 100px 600px;
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-  display: block;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
