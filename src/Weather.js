@@ -16,7 +16,7 @@ export default function Weather(props) {
       description: response.data.weather[0].main,
       icon: response.data.weather[0].icon,
       iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      precipitation: Math.round(response.data.main.pressure),
+      pressure: Math.round(response.data.main.pressure),
       temperature: Math.round(response.data.main.temp),
       date: new Date(response.data.dt * 1000),
       wind: Math.round(response.data.wind.speed) + "km/h",
@@ -98,7 +98,7 @@ export default function Weather(props) {
                 </div>
                 <div>
                   <small className="current-description">
-                    {weatherData.description}
+                    With {weatherData.description}
                   </small>
                 </div>
                 <div>
@@ -108,7 +108,7 @@ export default function Weather(props) {
                 </div>
                 <div>
                   <small className="pressure">
-                    Precipitation: {weatherData.precipitation}
+                    Pressure: {weatherData.pressure}
                   </small>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function Weather(props) {
                   <div className="col-4">
                     <img
                       className="float-left main-temp-image"
-                      src="http://openweathermap.org/img/wn/50d@2x.png"
+                      src={weatherData.iconUrl}
                       alt="temperature-icon"
                       width="50"
                     />
@@ -141,7 +141,7 @@ export default function Weather(props) {
           </div>
         </div>
         <footer>
-          <div className="container-footer fs-6 text fw-lighter fst-italic font-monospace">
+          <div className="container-footer fs-6 text fw-lighter fst-italic font-monospace text-start">
             <a
               href="https://github.com/barbara-mel/weather-app-project.git"
               target="_blank"
@@ -150,7 +150,15 @@ export default function Weather(props) {
             >
               Open-source coded{" "}
             </a>
-            By Barbara Melgaço
+            By Barbara Melgaço. Let's{" "}
+            <a
+              href="https://www.linkedin.com/in/barbaramelgaco1/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="open-source-info"
+            >
+              Connect!
+            </a>
             <i className="fa-solid fa-temperature-three-quarters"></i>
           </div>
         </footer>
