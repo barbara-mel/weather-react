@@ -69,7 +69,7 @@ export default function Weather(props) {
           <div className="row">
             <div className="col-5">
               <div className="row-city">
-                <h1>{weatherData.city}</h1>
+                <h1 className="text-start">{weatherData.city}</h1>
               </div>
 
               <div className="row-temperature-image">
@@ -83,31 +83,34 @@ export default function Weather(props) {
                   <span className="temperature fw-bolder mb-3">
                     {weatherData.temperature}
                   </span>
-                  <small className="units">ºC </small>
+                  <small className="units"> ºC | </small>{" "}
+                  <small className="units"> ºF </small>
                 </p>
               </div>
-              <div>
-                <small>Last Update: Desobrir porque não funciona </small>
-              </div>
-              <div>
-                <small className="humidity">
-                  Humidity: <span>{weatherData.humidity}</span>
-                </small>
-              </div>
-              <div>
-                <small className="current-description">
-                  {weatherData.description}
-                </small>
-              </div>
-              <div>
-                <small className="wind-speed">
-                  Wind Speed: {weatherData.wind}
-                </small>
-              </div>
-              <div>
-                <small className="pressure">
-                  Wind Speed: {weatherData.precipitation}
-                </small>
+              <div className="text-start">
+                <div>
+                  <small>Last Update: Current Date </small>
+                </div>
+                <div>
+                  <small className="humidity">
+                    Humidity: <span>{weatherData.humidity}</span>
+                  </small>
+                </div>
+                <div>
+                  <small className="current-description">
+                    {weatherData.description}
+                  </small>
+                </div>
+                <div>
+                  <small className="wind-speed">
+                    Wind Speed: {weatherData.wind}
+                  </small>
+                </div>
+                <div>
+                  <small className="pressure">
+                    Precipitation: {weatherData.precipitation}
+                  </small>
+                </div>
               </div>
             </div>
 
@@ -140,7 +143,7 @@ export default function Weather(props) {
         <footer>
           <div className="container-footer fs-6 text fw-lighter fst-italic font-monospace">
             <a
-              href="https://github.com/barbara-mel/week6-lesson4.git"
+              href="https://github.com/barbara-mel/weather-app-project.git"
               target="_blank"
               rel="noopener noreferrer"
               className="open-source-info"
