@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Styles.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -14,6 +15,7 @@ export default function Weather(props) {
       coordinates: response.data.coord,
       description: response.data.weather[0].main,
       icon: response.data.weather[0].icon,
+      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       precipitation: Math.round(response.data.main.pressure),
       temperature: Math.round(response.data.main.temp),
       date: new Date(response.data.dt * 1000),
@@ -71,10 +73,9 @@ export default function Weather(props) {
               </div>
 
               <div className="row-temperature-image">
-                {weatherData.icon}
                 <img
                   className="float-left main-temp-image"
-                  src=""
+                  src={weatherData.iconUrl}
                   alt="Clear"
                   width="180"
                 />
