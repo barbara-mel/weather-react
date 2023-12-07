@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import WeatherDate from "./WeatherDate";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import "./Styles.css";
@@ -89,7 +90,9 @@ export default function Weather(props) {
               </div>
               <div className="text-start">
                 <div>
-                  <small>Last Update: Current Date </small>
+                  <small>
+                    <WeatherDate date={props.data.date} />{" "}
+                  </small>
                 </div>
                 <div>
                   <small className="humidity">
