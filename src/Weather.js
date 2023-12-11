@@ -18,7 +18,7 @@ export default function Weather(props) {
       icon: response.data.weather[0].icon,
       iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       pressure: Math.round(response.data.main.pressure),
-      date: new Date(response.data.dt * 1000),
+      time: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed) + "km/h",
       humidity: Math.round(response.data.main.humidity) + "%",
@@ -91,7 +91,7 @@ export default function Weather(props) {
               <div className="text-start">
                 <div>
                   <small>
-                    <WeatherDate date={props.data.date} />{" "}
+                    <WeatherDate date={weatherData.date} />{" "}
                   </small>
                 </div>
                 <div>
