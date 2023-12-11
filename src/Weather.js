@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import WeatherDate from "./WeatherDate.js";
 import WeatherForecast from "./WeatherForecast.js";
+import WeatherIcon from "./WeatherIcon.js";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import "./Styles.css";
@@ -75,11 +76,10 @@ export default function Weather(props) {
               </div>
 
               <div className="row-temperature-image">
-                <img
-                  className="float-left main-temp-image"
-                  src={weatherData.iconUrl}
-                  alt="Clear"
-                  width="180"
+                <WeatherIcon
+                  code={weatherData.icon}
+                  size={120}
+                  color={weatherData.icon}
                 />
                 <p>
                   <span className="temperature fw-bolder mb-3">
@@ -91,33 +91,36 @@ export default function Weather(props) {
               </div>
               <div className="text-start">
                 <div>
-                  <small>
+                  <span>
                     <WeatherDate date={weatherData.date} />{" "}
-                  </small>
+                  </span>
                 </div>
                 <div>
-                  <small className="humidity">
+                  <span className="humidity">
                     Humidity: <span>{weatherData.humidity}</span>
-                  </small>
+                  </span>
                 </div>
                 <div>
-                  <small className="current-description">
+                  <span className="current-description">
                     With {weatherData.description}
-                  </small>
+                  </span>
                 </div>
                 <div>
-                  <small className="wind-speed">
+                  <span className="wind-speed">
                     Wind Speed: {weatherData.wind}
-                  </small>
+                  </span>
                 </div>
                 <div>
-                  <small className="pressure">
+                  <span className="pressure">
                     Pressure: {weatherData.pressure}
-                  </small>
+                  </span>
                 </div>
               </div>
             </div>
-            <WeatherForecast />
+            <WeatherForecast
+              date={weatherData}
+              coords={weatherData.coordinates}
+            />
           </div>
         </div>
         <footer>

@@ -1,4 +1,6 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import "./Styles.css";
 
 export default function WeatherDate(props) {
   let days = [
@@ -21,8 +23,8 @@ export default function WeatherDate(props) {
     minutes = `0${minutes}`;
   }
   return (
-    <small>
+    <span>
       Last Update: {day} {hours}:{minutes}
-    </small>
+    </span>
   );
 }
