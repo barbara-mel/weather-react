@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherDate from "./WeatherDate.js";
+import WeatherForecast from "./WeatherForecast.js";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import "./Styles.css";
@@ -18,7 +19,7 @@ export default function Weather(props) {
       icon: response.data.weather[0].icon,
       iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       pressure: Math.round(response.data.main.pressure),
-      time: new Date(response.data.dt * 1000),
+      date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed) + "km/h",
       humidity: Math.round(response.data.main.humidity) + "%",
@@ -116,31 +117,7 @@ export default function Weather(props) {
                 </div>
               </div>
             </div>
-
-            <div className="col-7" id="forecast">
-              <div className="row">
-                <div className="row next-temperature-days">
-                  <div className="col-4">
-                    <img
-                      className="float-left main-temp-image"
-                      src={weatherData.iconUrl}
-                      alt="temperature-icon"
-                      width="50"
-                    />
-                  </div>
-                  <div className="col-8">
-                    <span className="weather-forecast-temperature-max">
-                      30°C
-                    </span>{" "}
-                    |
-                    <span className="weather-forecast-temperature-min">
-                      25°C
-                    </span>
-                    <div className="forecast-time">Monday, 07/31</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <WeatherForecast />
           </div>
         </div>
         <footer>
