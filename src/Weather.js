@@ -102,7 +102,7 @@ export default function Weather(props) {
                 </div>
                 <div>
                   <span className="current-description">
-                    With {weatherData.description}
+                    {weatherData.description}
                   </span>
                 </div>
                 <div>
@@ -119,7 +119,7 @@ export default function Weather(props) {
             </div>
             <WeatherForecast
               date={weatherData}
-              coords={weatherData.coordinates}
+              coordinates={weatherData.coordinates}
             />
           </div>
         </div>

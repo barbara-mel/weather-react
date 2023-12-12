@@ -26,10 +26,10 @@ export default function WeatherIcon(props) {
   const codeMappingColor = {
     "01d": "#FDD14F",
     "01n": "#FDD14F",
-    "02d": "#455d7a",
-    "02n": "#455d7a",
-    "03d": "#455d7a",
-    "03n": "#455d7a",
+    "02d": "#9ba6a5",
+    "02n": "#9ba6a5",
+    "03d": "#9ba6a5",
+    "03n": "#9ba6a5",
     "04d": "#9ba6a5",
     "04n": "#9ba6a5",
     "09d": "#393e46",
@@ -40,8 +40,8 @@ export default function WeatherIcon(props) {
     "11n": "#393e46",
     "13d": "#79c2d0",
     "13n": "#79c2d0",
-    "50d": "#eeeeee",
-    "50n": "#eeeeee",
+    "50d": "#9ba6a5",
+    "50n": "#9ba6a5",
   };
 
   return (
