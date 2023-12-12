@@ -134,3 +134,10 @@ a {
 .open-source-info {
   color: blue;
 }
+
+@media (max-width: 390) {
+  /* mobile CSS: hide .desktop div */
+  .next-temperature-days {
+    display: none;
+  }
+}
