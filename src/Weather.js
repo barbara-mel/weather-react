@@ -61,7 +61,7 @@ export default function Weather(props) {
                   onChange={handleCityChange}
                 />
               </div>
-              <div className="col-2 pink-button">
+              <div className="col-10 col-xl-2 pink-button">
                 <input type="submit" className="btn w-100" value="Search" />
               </div>
             </div>
@@ -70,9 +70,9 @@ export default function Weather(props) {
 
         <div className="container-weather">
           <div className="row">
-            <div className="col-5">
+            <div className="col-12 col-lg-5">
               <div className="row-city">
-                <h1 className="text-start">{weatherData.city}</h1>
+                <h1 className="text-start-city">{weatherData.city}</h1>
               </div>
 
               <div className="row-temperature-image">
@@ -124,7 +124,7 @@ export default function Weather(props) {
           </div>
         </div>
         <footer>
-          <div className="container-footer fs-6 text fw-lighter fst-italic font-monospace text-start">
+          <div className="container-footer fs-6 text fw-lighter fst-italic font-monospace">
             <a
               href="https://github.com/barbara-mel/weather-app-project.git"
               target="_blank"
