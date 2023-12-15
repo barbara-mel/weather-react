@@ -5,6 +5,7 @@ import WeatherIcon from "./WeatherIcon.js";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import "./Styles.css";
+import WeatherTemperature from "./WeatherTemperature.js";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -82,11 +83,7 @@ export default function Weather(props) {
                   color={weatherData.icon}
                 />
                 <p>
-                  <span className="temperature fw-bolder mb-3">
-                    {weatherData.temperature}
-                  </span>
-                  <small className="units"> ºC | </small>{" "}
-                  <small className="units"> ºF </small>
+                  <WeatherTemperature celsius={weatherData.temperature} />
                 </p>
               </div>
               <div className="text-start">
