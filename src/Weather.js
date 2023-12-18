@@ -53,7 +53,7 @@ export default function Weather(props) {
         <div className="container-search-tab">
           <form className="mb-3" onSubmit={handleSubmit}>
             <div className="row">
-              <div className="col-10">
+              <div className="col-xl-10">
                 <input
                   type="search"
                   placeholder="Enter a city.."
@@ -62,7 +62,7 @@ export default function Weather(props) {
                   onChange={handleCityChange}
                 />
               </div>
-              <div className="col-10 col-xl-2 pink-button">
+              <div className="col-xl-2 pink-button">
                 <input type="submit" className="btn w-100" value="Search" />
               </div>
             </div>
@@ -70,8 +70,8 @@ export default function Weather(props) {
         </div>
 
         <div className="container-weather">
-          <div className="row">
-            <div className="col-12 col-lg-5">
+          <div className="row justify-content-lg-center">
+            <div className="col-lg-5  current-temperature">
               <div className="row-city">
                 <h1 className="text-start-city">{weatherData.city}</h1>
               </div>

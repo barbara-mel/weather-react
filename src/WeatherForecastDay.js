@@ -31,14 +31,14 @@ export default function WeatherForecastDay(props) {
 
   return (
     <div className="row next-temperature-days">
-      <div className="col-4">
+      <div className="col-lg-3">
         <WeatherIcon
           code={props.data.weather[0].icon}
           size={32}
           color={props.data.weather[0].icon}
         />
       </div>
-      <div className="col-8">
+      <div className="col-lg-9">
         <span className="WeatherForecast-temperature-max">
           {maxTemperature()} °C
         </span>{" "}

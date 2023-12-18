@@ -10,9 +10,9 @@
   opacity: 0.6;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1212px) {
   /* mobile CSS: hide .desktop div */
-  .WeatherForecast-weather-forecast {
+  #forecast {
     display: none;
   }
 }
