@@ -79,7 +79,7 @@ export default function Weather(props) {
               <div className="row-temperature-image">
                 <WeatherIcon
                   code={weatherData.icon}
-                  size={120}
+                  size={160}
                   color={weatherData.icon}
                 />
                 <p>
