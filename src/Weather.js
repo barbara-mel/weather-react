@@ -130,14 +130,14 @@ export default function Weather(props) {
             >
               Open-source coded{" "}
             </a>
-            By Barbara Melgaço. Let's{" "}
+            <span className="footer-1">By Barbara Melgaço. Let's</span>{" "}
             <a
               href="https://www.linkedin.com/in/barbaramelgaco1/"
               target="_blank"
               rel="noopener noreferrer"
               className="open-source-info"
             >
-              Connect!
+              <span className="footer-1">Connect!</span>
             </a>
             <i className="fa-solid fa-temperature-three-quarters"></i>
           </div>
