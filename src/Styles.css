@@ -147,6 +147,11 @@ a {
 }
 .open-source-info {
   color: blue;
+  font-size: 15px;
+}
+
+.footer-1 {
+  font-size: 15px;
 }
 
 @media (max-width: 1201px) {
@@ -187,6 +192,11 @@ a {
 }
 
 @media (max-width: 431px) {
+  body {
+    padding: 10px 110px 50px 30px;
+    margin: 10px 1px 20px 1px;
+  }
+
   .container {
     min-width: 300px;
     padding: 1px;
@@ -199,20 +209,21 @@ a {
     margin: 10px;
   }
   .text-start-city {
-    font-size: 25px;
+    font-size: 20px;
     text-align: left;
     margin: 1px;
   }
   span .temperature {
-    font-size: 20px;
-    margin: 20px;
+    font-size: 45px;
+    margin: 5px;
   }
   .text-start {
     font-size: 10px;
     margin: 0px;
   }
   canvas {
-    width: 80px;
+    width: 90px;
+    margin-top: 15px;
   }
 
   .container-footer {
