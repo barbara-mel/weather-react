@@ -171,7 +171,7 @@ a {
     margin: 20px;
   }
   .text-start {
-    font-size: 10px;
+    font-size: 12px;
     margin: 0px;
   }
 }
@@ -217,8 +217,12 @@ a {
     font-size: 45px;
     margin: 5px;
   }
+
+  .weather-temperature-session {
+    margin-bottom: 1px;
+  }
   .text-start {
-    font-size: 10px;
+    font-size: 12px;
     margin: 0px;
   }
   canvas {

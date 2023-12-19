@@ -82,7 +82,7 @@ export default function Weather(props) {
                   size={160}
                   color={weatherData.icon}
                 />
-                <p>
+                <p className="weather-temperature-session">
                   <WeatherTemperature celsius={weatherData.temperature} />
                 </p>
               </div>
