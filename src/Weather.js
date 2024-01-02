@@ -122,24 +122,17 @@ export default function Weather(props) {
         </div>
         <footer>
           <div className="container-footer fs-6 text fw-lighter fst-italic font-monospace">
-            <a
-              href="https://github.com/barbara-mel/weather-app-project.git"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="open-source-info"
-            >
-              Open-source coded{" "}
-            </a>
-            <span className="footer-1">By Barbara Melgaço. Let's</span>{" "}
-            <a
-              href="https://www.linkedin.com/in/barbaramelgaco1/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="open-source-info"
-            >
-              <span className="footer-1">Connect!</span>
-            </a>
-            <i className="fa-solid fa-temperature-three-quarters"></i>
+            <span className="footer-1">
+              <a
+                href="https://github.com/barbara-mel/weather-app-project.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="open-source-info"
+              >
+                Open-source coded{" "}
+              </a>
+              By Barbara Melgaço.
+            </span>{" "}
           </div>
         </footer>
       </div>
